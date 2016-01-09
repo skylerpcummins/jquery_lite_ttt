@@ -6,8 +6,9 @@ var View = function (game, $el) {
 };
 
 View.prototype.bindEvents = function () {
-  this.$grid.on("click", '.square', function(e){
-    var $thisSquare = $(e.currentTarget);
+  window.$l('li').on('click', function(e){
+    debugger;
+    var $thisSquare = window.$l(e.currentTarget);
     var moveValidity = this.game.playMove($thisSquare.data("id"));
     if (moveValidity) {
       this.makeMove($thisSquare);
@@ -28,30 +29,17 @@ View.prototype.makeMove = function ($square) {
   } else {
     $square.addClass("thomas").addClass('clicked');
   }
-  // $square.text(this.game.currentPlayer);
 };
 
 View.prototype.setupBoard = function () {
-  console.log("in setupBoard");
-  this.$grid = $("<ul>").addClass("grid");
+  this.$grid = window.$l('ul');
   for (var i = 0; i < 3; i++) {
-    // this.$grid.addRow();
     for (var j = 0; j < 3; j++) {
-      var $square = $("<li>").addClass("square").data("id", [i, j]);
-      console.log("in addRow for loop");
-      this.$grid.append($square);
+      this.$grid.append('li');
+      var $square = window.$l('ul').lastChild();
+      $square.addClass('square');
     }
   }
-  this.$el.append(this.$grid);
 };
-
-// View.prototype.addRow = function () {
-//   console.log("in addRow");
-//   for (var i = 0; i < 3; i++) {
-//     var $square = $("<li>").addClass("square");
-//     console.log("in addRow for loop");
-//     this.$grid.append($square);
-//   }
-// };
 
 module.exports = View;
