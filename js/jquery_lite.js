@@ -56,7 +56,6 @@
       });
     } else if (arg instanceof DomNodeCollection) {
       this.htmlElements.forEach(function(el) {
-        debugger;
         arg.forEach(function(el2){
           el.appendChild(el2);
         });
@@ -73,7 +72,7 @@
     if (typeof value === "undefined") {
       var firstEl = this.htmlElements[0];
       var myAttributes = firstEl.attributes;
-      return myAttributes[attributeName];
+      return myAttributes[attributeName].value;
     }
     this.htmlElements.forEach( function(el) {
       el.setAttribute(attributeName, value);

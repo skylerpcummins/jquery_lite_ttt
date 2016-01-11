@@ -7,13 +7,18 @@ var View = function (game, $el) {
 
 View.prototype.bindEvents = function () {
   window.$l('li').on('click', function(e){
-    debugger;
-    var $thisSquare = window.$l(e.currentTarget);
-    var moveValidity = this.game.playMove($thisSquare.data("id"));
+    var pos = [];
+    var $square = window.$l(e.currentTarget)
+    var pos = this.generatePos($square);
+    var moveValidity = this.game.playMove(pos);
     if (moveValidity) {
-      this.makeMove($thisSquare);
+      this.makeMove($square);
       if (this.game.isOver()) {
-        alert(this.game.board.winner() + " wins!");
+        if (this.game.board.winner() !== null) {
+          alert(this.game.board.winner() + " wins!");
+        } else {
+          alert("Cat's game!");
+        }
       }
       this.game.swapTurn();
     }
@@ -23,11 +28,22 @@ View.prototype.bindEvents = function () {
   }.bind(this));
 };
 
+View.prototype.generatePos = function($square) {
+  var pos = [];
+  var posString = $square.attr('position');
+  pos[0] = parseInt(posString[0]);
+  pos[1] = parseInt(posString[2]);
+
+  return pos;
+};
+
 View.prototype.makeMove = function ($square) {
   if (this.game.currentPlayer === 'x') {
-    $square.addClass("ben").addClass('clicked');
+    $square.addClass("ben")
+    $square.addClass('clicked');
   } else {
-    $square.addClass("thomas").addClass('clicked');
+    $square.addClass("thomas")
+    $square.addClass('clicked');
   }
 };
 
@@ -37,6 +53,7 @@ View.prototype.setupBoard = function () {
     for (var j = 0; j < 3; j++) {
       this.$grid.append('li');
       var $square = window.$l('ul').lastChild();
+      $square.attr('position', [i, j]);
       $square.addClass('square');
     }
   }

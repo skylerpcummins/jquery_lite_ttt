@@ -44,20 +44,19 @@ Game.prototype.run = function (reader, gameCompletionCallback) {
     if (this.isOver()) {
       this.board.print();
       if (this.winner()) {
+        debugger;
         console.log(this.winner() + " has won!");
       } else {
         console.log("NO ONE WINS!");
       }
       gameCompletionCallback();
     } else {
-      // continue loop
       this.run(reader, gameCompletionCallback);
     }
   }).bind(this));
 };
 
 Game.prototype.swapTurn = function () {
-  debugger;
   if (this.currentPlayer === Board.marks[0]) {
     this.currentPlayer = Board.marks[1];
   } else {

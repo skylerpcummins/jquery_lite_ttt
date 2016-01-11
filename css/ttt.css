@@ -1,4 +1,6 @@
-
+body {
+  background-color: black;
+}
 
 .grid {
   width: 660px;
@@ -7,9 +9,6 @@
   padding: 0;
   margin: 0 auto;
   border: 10px solid black;
-  /*content: "";
-  display: block;
-  clear: both;*/
   position: relative;
 }
 
@@ -22,18 +21,11 @@
   font-size: 300px;
   text-align: center;
   background-image: src;
-  /*position: absolute;*/
-  /*bottom: 50px;
-  left: 50px*/
 }
 
 .square:not(.clicked):hover {
   background-color: yellow;
 }
-
-/*.clicked:after {
-  content: 'x'
-}*/
 
 .thomas {
   background-image: url(http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/000/974/medium/Thomas_Claiborne.jpg?1446673812);
