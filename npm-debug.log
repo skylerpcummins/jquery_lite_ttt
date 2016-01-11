@@ -1,0 +1,34 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/4.2.1/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   './ttt-view' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.1
+4 verbose install initial load of /Users/skylercummins/Documents/jquery_lite_ttt/jquery_lite_ttt/package.json
+5 verbose readDependencies loading dependencies from /Users/skylercummins/Documents/jquery_lite_ttt/jquery_lite_ttt/package.json
+6 silly cache add args [ './ttt-view', null ]
+7 verbose cache add spec ./ttt-view
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: './ttt-view',
+8 silly cache add   scope: null,
+8 silly cache add   name: null,
+8 silly cache add   rawSpec: './ttt-view',
+8 silly cache add   spec: '/Users/skylercummins/Documents/jquery_lite_ttt/jquery_lite_ttt/ttt-view',
+8 silly cache add   type: 'local' }
+9 error addLocal Could not install /Users/skylercummins/Documents/jquery_lite_ttt/jquery_lite_ttt/ttt-view
+10 verbose stack Error: ENOENT: no such file or directory, open '/Users/skylercummins/Documents/jquery_lite_ttt/jquery_lite_ttt/ttt-view'
+10 verbose stack     at Error (native)
+11 verbose cwd /Users/skylercummins/Documents/jquery_lite_ttt/jquery_lite_ttt
+12 error Darwin 14.5.0
+13 error argv "/usr/local/Cellar/node/4.2.1/bin/node" "/usr/local/bin/npm" "install" "./ttt-view"
+14 error node v4.2.1
+15 error npm  v2.14.7
+16 error path /Users/skylercummins/Documents/jquery_lite_ttt/jquery_lite_ttt/ttt-view
+17 error code ENOENT
+18 error errno -2
+19 error syscall open
+20 error enoent ENOENT: no such file or directory, open '/Users/skylercummins/Documents/jquery_lite_ttt/jquery_lite_ttt/ttt-view'
+20 error enoent This is most likely not a problem with npm itself
+20 error enoent and is related to npm not being able to find a file.
+21 verbose exit [ -2, true ]
